@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "64f4bb4c-a986-4271-a2c6-9e3c23f8f29c",
+		"name": "ContactKeeper API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users & Auth",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jorge Iranzo\",\r\n    \"email\": \"jorgediranzo@gmail.com\",\r\n    \"password\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log in user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jorgediranzo@gmail.com\",\r\n    \"password\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get logged in user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiOWVlMDBjYjNlNDE2NDE4N2I4YWZiIn0sImlhdCI6MTYyMjc5OTIyNCwiZXhwIjoxNjIzMTU5MjI0fQ.i_ewBRP3M00BZJoqe30xho-YwlazLm2Y1l5kYVr9SFo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jorgediranzo@gmail.com\",\r\n    \"password\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Get all contacts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiOWVlMDBjYjNlNDE2NDE4N2I4YWZiIn0sImlhdCI6MTYyMjgwMTk4MSwiZXhwIjoxNjIzMTYxOTgxfQ.9V5TauRzF7OReIozwFuurj460u3zZwbX8LQYqgo5CM8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/api/contacts",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiOWVlMDBjYjNlNDE2NDE4N2I4YWZiIn0sImlhdCI6MTYyMjgwMTk4MSwiZXhwIjoxNjIzMTYxOTgxfQ.9V5TauRzF7OReIozwFuurj460u3zZwbX8LQYqgo5CM8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tidus3\",\r\n    \"email\": \"tidus3dfsafafsda@gmail.com\",\r\n    \"phone\": \"311-111-1111\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/contacts",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update contact",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiOWVlMDBjYjNlNDE2NDE4N2I4YWZiIn0sImlhdCI6MTYyMjgwNTMwNSwiZXhwIjoxNjIzMTY1MzA1fQ.U7s8v4hcMa5xuVU9daXO29IzvYXiEC5fwvnf7VSZNC4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"Lulu_updated_dfsafafsda@gmail.com\",\r\n    \"phone\": \"updated_111-111-1111\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/contacts/60ba076d599b9985600428c9",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contacts",
+								"60ba076d599b9985600428c9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete contact",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiOWVlMDBjYjNlNDE2NDE4N2I4YWZiIn0sImlhdCI6MTYyMjgwNTMwNSwiZXhwIjoxNjIzMTY1MzA1fQ.U7s8v4hcMa5xuVU9daXO29IzvYXiEC5fwvnf7VSZNC4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"Lulu_updated_dfsafafsda@gmail.com\",\r\n    \"phone\": \"updated_111-111-1111\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/contacts/60ba0704599b9985600428c7",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contacts",
+								"60ba0704599b9985600428c7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
